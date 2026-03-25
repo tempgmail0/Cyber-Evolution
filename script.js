@@ -3,7 +3,7 @@
     // এখানে আপনার আসল টেলিগ্রাম ইউজারনেম বা ইনভাইট লিংক দিন। 
     // উদাহরণ: "https://t.me/your_username" অথবা "https://t.me/cyber_evolution_team"
     // ডেমোর জন্য একটি ডেডিকেটেড লিংক ব্যবহার করা হয়েছে যা আপনি সহজেই সম্পাদনা করতে পারবেন।
-    const TELEGRAM_LINK = "https://t.me/cyber_evolution_support"; // ← এখানে আপনার টেলিগ্রাম লিংক বা ইউজারনেম সেট করুন
+    const TELEGRAM_LINK = "https://t.me/Cyber_Evolution_CEO"; // ← এখানে আপনার টেলিগ্রাম লিংক বা ইউজারনেম সেট করুন
     // যদি কোনো কাস্টম ইউজারনেম না থাকে, তাহলে https://t.me/ আপনার আইডি বসান।
     
     const contactBtn = document.getElementById('telegramContactBtn');
