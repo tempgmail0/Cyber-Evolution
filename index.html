@@ -1,118 +1,498 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Cyber Evolution | অ্যাডভান্স টেক কোর্স</title>
-  <!-- Google Fonts & Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Evolution - Advanced Cyber Security & Programming</title>
+    <meta name="description" content="Cyber Evolution কোর্সের মাধ্যমে অ্যাডভান্স জাভা, DSA, ম্যালওয়্যার এনালাইসিস এবং সাইবার সিকিউরিটি শিখুন।">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="container">
-  <!-- navbar -->
-  <div class="navbar">
-    <div class="logo">
-      <i class="fas fa-shield-hog"></i>
-      <h1>Cyber Evolution</h1>
+    <!-- ===== WATER DROP SPLASH SCREEN ===== -->
+    <div id="splashScreen" class="splash-screen">
+        <div class="drop-container">
+            <div class="drop"></div>
+            <div class="ripple ripple-1"></div>
+            <div class="ripple ripple-2"></div>
+            <div class="ripple ripple-3"></div>
+        </div>
+        <p class="splash-text">Cyber Evolution</p>
     </div>
-    <div class="nav-badge">
-      <i class="fas fa-code"></i> প্রো লেভেল কোর্স
-    </div>
-  </div>
 
-  <!-- hero -->
-  <div class="hero">
-    <h2>টেকনোলজি & সাইবার<br>জ্ঞানকে নতুন উচ্চতায় নিয়ে যান</h2>
-    <p>হ্যান্ডস-অন লার্নিং, রিয়েল প্রজেক্ট এবং সাইবার সিকিউরিটি ডোমেইনে গভীর দক্ষতা অর্জন করুন।</p>
-    <div class="hero-tag">
-      <i class="fas fa-graduation-cap"></i>  সম্পূর্ণ প্র্যাকটিক্যাল কোর্স
-    </div>
-  </div>
+    <!-- ===== MAIN SITE WRAPPER ===== -->
+    <div id="siteWrapper" class="site-wrapper">
 
-  <!-- কোর্স ডিটেইলস সেকশন -->
-  <div>
-    <h2 class="section-title"><i class="fas fa-book-open" style="margin-right: 12px;"></i> 📚 কোর্স ডিটেইলস</h2>
-    <div style="margin-bottom: 12px; font-size: 1rem; color: #cbd5e6;">আমাদের “Cyber Evolution” কোর্সটি এমনভাবে ডিজাইন করা হয়েছে, যাতে আপনার টেকনোলজি ও সাইবার জ্ঞানকে আরও উন্নত করা যায়। এখানে আপনি শিখতে পারবেন—</div>
-  </div>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="mainHeader">
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <span class="logo-text">Cyber <span class="logo-accent">Evolution</span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#course">কোর্স</a>
+                <a href="#how-to-buy">কেনার পদ্ধতি</a>
+                <a href="#contact">যোগাযোগ</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="loginBtn" class="btn-login">
+                    <i class="fa-solid fa-user-lock"></i>
+                    <span>লগইন</span>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#course">কোর্স</a>
+            <a href="#how-to-buy">কেনার পদ্ধতি</a>
+            <a href="#contact">যোগাযোগ</a>
+        </div>
+    </header>
 
-  <!-- কোর্স কার্ড গ্রিড (7 টি মূল বিষয়) -->
-  <div class="course-grid">
-    <!-- 1. Advanced Java -->
-    <div class="course-card">
-      <div class="card-icon"><i class="fab fa-java"></i></div>
-      <h3>🔹 এডভান্স জাভা প্রোগ্রামিং</h3>
-      <p>মাল্টি-থ্রেডিং, নেটওয়ার্ক সকেট, এন্টারপ্রাইজ ফিচারসহ অ্যাডভান্স কনসেপ্ট।</p>
-      <div class="badge-req"><i class="fas fa-exclamation-triangle"></i> পূর্বশর্ত: বেসিক জাভা জানা আবশ্যক</div>
+    <!-- ===== LOGIN MODAL ===== -->
+    <div id="loginModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-panel">
+            <button class="modal-close" id="closeLogin"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-lock"></i></div>
+                <h2>একাউন্টে প্রবেশ করুন</h2>
+                <p>আপনার টোকেন ও পাসওয়ার্ড দিয়ে লগইন করুন</p>
+            </div>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="token"><i class="fa-solid fa-key"></i> TOKEN নাম্বার</label>
+                    <input type="text" id="token" placeholder="আপনার TOKEN দিন" required>
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fa-solid fa-shield"></i> পাসওয়ার্ড</label>
+                    <input type="password" id="password" placeholder="আপনার পাসওয়ার্ড দিন" required>
+                </div>
+                <button type="submit" class="btn-primary btn-full">
+                    <i class="fa-solid fa-right-to-bracket"></i> লগইন করুন
+                </button>
+            </form>
+        </div>
     </div>
-    <!-- 2. DSA -->
-    <div class="course-card">
-      <div class="card-icon"><i class="fas fa-diagram-project"></i></div>
-      <h3>🔹 ডাটা স্ট্রাকচার ও অ্যালগরিদম (DSA)</h3>
-      <ul class="highlight-list">
-        <li><i class="fas fa-brain"></i> প্রোগ্রামিং লজিক শক্তিশালী করা</li>
-        <li><i class="fas fa-chart-line"></i> সমস্যা সমাধানের দক্ষতা বৃদ্ধি</li>
-      </ul>
-    </div>
-    <!-- 3. Professional Java Project -->
-    <div class="course-card">
-      <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-      <h3>🔹 প্রফেশনাল জাভা প্রজেক্ট ডেভেলপমেন্ট</h3>
-      <p>বাস্তব জীবনের প্রজেক্ট তৈরি শেখানো হবে। ডেস্কটপ অ্যাপ, API ইন্টিগ্রেশন সহ।</p>
-    </div>
-    <!-- 4. Malware Testing -->
-    <div class="course-card">
-      <div class="card-icon"><i class="fas fa-bug"></i></div>
-      <h3>🔹 ম্যালওয়্যার টেস্টিং</h3>
-      <p>বিভিন্ন ধরনের ম্যালওয়্যার বিশ্লেষণ ও পরীক্ষা (স্যান্ডবক্স, বিহেভিয়ারাল অ্যানালাইসিস)।</p>
-    </div>
-    <!-- 5. Malware Reverse Engineering -->
-    <div class="course-card">
-      <div class="card-icon"><i class="fas fa-microscope"></i></div>
-      <h3>🔹 ম্যালওয়্যার রিভার্স ইঞ্জিনিয়ারিং</h3>
-      <p>ম্যালওয়্যার কীভাবে কাজ করে তা গভীরভাবে বোঝা, ডিসঅ্যাসেম্বলি ও ডিবাগিং টেকনিক।</p>
-    </div>
-    <!-- 6. Basic Networking -->
-    <div class="course-card">
-      <div class="card-icon"><i class="fas fa-network-wired"></i></div>
-      <h3>🔹 বেসিক নেটওয়ার্কিং</h3>
-      <p>নেটওয়ার্কের মৌলিক ধারণা ও ব্যবহার: OSI মডেল, IP, পোর্ট, ফায়ারওয়াল, TCP/UDP।</p>
-    </div>
-    <!-- 7. Java+Networking Software & RAT -->
-    <div class="course-card">
-      <div class="card-icon"><i class="fas fa-cogs"></i></div>
-      <h3>🔹 জাভা ও নেটওয়ার্কিং ব্যবহার করে সফটওয়্যার তৈরি</h3>
-      <ul class="highlight-list">
-        <li><i class="fas fa-code-branch"></i> নিজেই বিভিন্ন সফটওয়্যার ডেভেলপমেন্ট</li>
-        <li><i class="fas fa-tv"></i> RAT (Remote Access Tool) তৈরি করা ও কাজের প্রক্রিয়া</li>
-      </ul>
-      <div class="badge-req"><i class="fas fa-shield-alt"></i> শুধুমাত্র শিক্ষাগত ও ইথিক্যাল হ্যাকিং প্র্যাকটিস</div>
-    </div>
-  </div>
 
-  <!-- অতিরিক্ত তথ্য / বিশেষ নোট -->
-  <div class="special-note">
-    <i class="fas fa-certificate" style="color:#2ecc71; margin-right: 12px;"></i>
-    <strong>কোর্সের বিশেষত্ব :</strong> লাইভ প্রজেক্ট, মেন্টরশিপ, রিসোর্স অ্যাক্সেস এবং সাইবার সিকিউরিটি ক্যারিয়ার গাইডলাইন। কোর্স শেষে একটি ক্যাপস্টোন প্রজেক্ট জমা দিতে হবে।
-  </div>
+    <!-- ===== PAYMENT MODAL ===== -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-panel modal-wide">
+            <button class="modal-close close-payment"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon" style="background: linear-gradient(135deg, #e2146e, #f43f5e);"><i class="fa-solid fa-bag-shopping"></i></div>
+                <h2>কোর্সে এনরোল করুন</h2>
+                <p>নিচের পদ্ধতি অনুসরণ করুন</p>
+            </div>
 
-  <!-- কন্টাক্ট বাটন (টেলিগ্রাম) -->
-  <div class="contact-area">
-    <button class="telegram-btn" id="telegramContactBtn">
-      <i class="fab fa-telegram-plane"></i>  কন্টাক্ট করুন (টেলিগ্রাম)
-    </button>
-    <div class="contact-note">
-      <i class="fas fa-comment-dots"></i>  প্রশ্ন, ভর্তি তথ্য বা সিলেবাস জানতে টেলিগ্রামে মেসেজ দিন।
+            <div class="bkash-box">
+                <div class="bkash-label"><i class="fa-solid fa-mobile-screen-button"></i> বিকাশ সেন্ড মানি (Personal)</div>
+                <div class="bkash-number">01829534989</div>
+                <div class="bkash-amount">পরিমাণ: <strong>৳ ৩০০০</strong></div>
+            </div>
+
+            <form id="paymentForm">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="senderNumber"><i class="fa-solid fa-phone"></i> যে নাম্বার থেকে পাঠিয়েছেন</label>
+                        <input type="text" id="senderNumber" placeholder="01X-XXXX-XXXX" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="trxId"><i class="fa-solid fa-receipt"></i> Transaction ID (TrxID)</label>
+                        <input type="text" id="trxId" placeholder="যেমন: 9B7C6X5Z" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="contactNumber"><i class="fa-brands fa-whatsapp"></i> WhatsApp / Telegram নাম্বার (TOKEN পাঠানো হবে)</label>
+                    <input type="text" id="contactNumber" placeholder="আপনার যোগাযোগের নাম্বার" required>
+                </div>
+                <button type="submit" class="btn-primary btn-full" style="background: linear-gradient(135deg, #e2146e, #f43f5e);">
+                    <i class="fa-solid fa-check-circle"></i> পেমেন্ট কনফার্ম করুন
+                </button>
+            </form>
+        </div>
     </div>
-  </div>
 
-  <!-- footer -->
-  <div class="footer">
-    <p><i class="far fa-copyright"></i> 2025 Cyber Evolution — প্রযুক্তিতে সেরা, সাইবার সচেতনতায় অগ্রগামী</p>
-  </div>
-</div>
-<script src="script.js"></script>
+    <!-- ===== SUCCESS MODAL ===== -->
+    <div id="successModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-panel text-center">
+            <button class="modal-close close-success"><i class="fa-solid fa-xmark"></i></button>
+            <div class="success-anim">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2 class="success-title">পেমেন্ট জমা নেওয়া হয়েছে!</h2>
+            <p class="success-msg">অনুগ্রহ করে <strong>৫ থেকে ১০ মিনিট</strong> পর আপনার লগিন <strong>TOKEN</strong> এবং <strong>পাসওয়ার্ড</strong> আপনার দেওয়া নাম্বারে পেয়ে যাবেন। ধন্যবাদ।</p>
+            <div class="notice-warning">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p>বিঃদ্রঃ ডেলিভারিতে ১০ মিনিটের বেশি সময় লাগলে আমাদের সাপোর্ট টিমের সাথে যোগাযোগ করবেন।</p>
+            </div>
+            <button type="button" class="btn-primary close-success-btn" style="margin-top: 20px;">
+                <i class="fa-solid fa-check"></i> ঠিক আছে
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== PRIVACY POLICY MODAL ===== -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-panel modal-wide">
+            <button class="modal-close close-privacy"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-file-shield"></i></div>
+                <h2>প্রাইভেসি পলিসি</h2>
+                <p>সর্বশেষ আপডেট: মার্চ ২০২৬</p>
+            </div>
+            <div class="policy-content">
+                <div class="policy-section">
+                    <h4><i class="fa-solid fa-database"></i> তথ্য সংগ্রহ</h4>
+                    <p>আমরা শুধুমাত্র প্রয়োজনীয় তথ্য যেমন আপনার যোগাযোগের নাম্বার এবং পেমেন্টের বিবরণ সংগ্রহ করি। আপনার ব্যক্তিগত তথ্য কোনো তৃতীয় পক্ষের সাথে শেয়ার করা হয় না।</p>
+                </div>
+                <div class="policy-section">
+                    <h4><i class="fa-solid fa-lock"></i> তথ্য সুরক্ষা</h4>
+                    <p>আপনার প্রদত্ত সকল তথ্য সম্পূর্ণ নিরাপদ রাখা হয়। লগইন টোকেন ও পাসওয়ার্ড এনক্রিপ্টেড পদ্ধতিতে সংগ্রহ ও পরিচালনা করা হয়।</p>
+                </div>
+                <div class="policy-section">
+                    <h4><i class="fa-solid fa-money-bill-transfer"></i> পেমেন্ট নীতি</h4>
+                    <p>পেমেন্ট সম্পন্ন হওয়ার পর ৫ থেকে ১০ মিনিটের মধ্যে আপনার দেওয়া যোগাযোগ নাম্বারে TOKEN ও পাসওয়ার্ড পাঠানো হবে। কোনো কারণে নির্ধারিত সময়ের মধ্যে না পেলে সাপোর্ট টিমের সাথে যোগাযোগ করুন।</p>
+                </div>
+                <div class="policy-section">
+                    <h4><i class="fa-solid fa-rotate-left"></i> রিফান্ড পলিসি</h4>
+                    <p>কোর্স শুরু হওয়ার আগ পর্যন্ত সম্পূর্ণ রিফান্ড প্রদান করা হবে। কোর্স শুরু হওয়ার পরে কোনো রিফান্ড প্রযোজ্য হবে না। রিফান্ডের জন্য আমাদের সাপোর্টে যোগাযোগ করুন।</p>
+                </div>
+                <div class="policy-section">
+                    <h4><i class="fa-solid fa-ban"></i> ব্যবহারের শর্ত</h4>
+                    <p>কোর্সের কোনো শিক্ষা উপকরণ অন্যের সাথে শেয়ার, বিক্রি বা পুনর্বিতরণ করা সম্পূর্ণ নিষিদ্ধ। এই নিয়ম লঙ্ঘনে একাউন্ট স্থায়ীভাবে নিষিদ্ধ করা হবে।</p>
+                </div>
+                <div class="policy-section">
+                    <h4><i class="fa-solid fa-envelope"></i> যোগাযোগ</h4>
+                    <p>প্রাইভেসি পলিসি বিষয়ক যেকোনো প্রশ্নের জন্য আমাদের টেলিগ্রাম বা WhatsApp-এ যোগাযোগ করুন।</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HOW TO BUY MODAL ===== -->
+    <div id="howToBuyModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-panel modal-wide">
+            <button class="modal-close close-howtobuy"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i class="fa-solid fa-cart-shopping"></i></div>
+                <h2>কোর্স কেনা ও লগইন করার পদ্ধতি</h2>
+                <p>ধাপে ধাপে সম্পূর্ণ গাইড</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-num">১</div>
+                    <div class="step-body">
+                        <h4>বিকাশে পেমেন্ট করুন</h4>
+                        <p>আমাদের বিকাশ নাম্বারে (<strong>01829534989</strong>) Send Money অপশনে গিয়ে <strong>৳ ৩০০০</strong> টাকা পাঠান।</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">২</div>
+                    <div class="step-body">
+                        <h4>এনরোলমেন্ট ফর্ম পূরণ করুন</h4>
+                        <p>সাইটে "কোর্সে এনরোল করুন" বাটনে ক্লিক করুন এবং আপনার বিকাশ নাম্বার, TrxID এবং WhatsApp/Telegram নাম্বার দিয়ে ফর্মটি জমা দিন।</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">৩</div>
+                    <div class="step-body">
+                        <h4>TOKEN ও পাসওয়ার্ড পান</h4>
+                        <p>পেমেন্ট ভেরিফাই হওয়ার পর <strong>৫ থেকে ১০ মিনিটের</strong> মধ্যে আপনার দেওয়া নাম্বারে TOKEN এবং পাসওয়ার্ড পাঠানো হবে।</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">৪</div>
+                    <div class="step-body">
+                        <h4>সাইটে লগইন করুন</h4>
+                        <p>হেডারের উপরের <strong>"লগইন"</strong> বাটনে ক্লিক করুন। প্রাপ্ত TOKEN ও পাসওয়ার্ড দিয়ে লগইন করুন এবং কোর্স ড্যাশবোর্ডে প্রবেশ করুন।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TERMS MODAL ===== -->
+    <div id="termsModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-panel modal-wide">
+            <button class="modal-close close-terms"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-file-contract"></i></div>
+                <h2>শর্তাবলী</h2>
+                <p>Terms & Conditions</p>
+            </div>
+            <div class="policy-content">
+                <div class="policy-section">
+                    <h4><i class="fa-solid fa-circle-check"></i> কোর্সে ভর্তির শর্তাবলী</h4>
+                    <p>কোর্সে ভর্তির সময় আপনাকে অবশ্যই সঠিক তথ্য প্রদান করতে হবে। ভুল তথ্য প্রদানের ক্ষেত্রে একাউন্ট বাতিল করার অধিকার আমাদের সংরক্ষিত।</p>
+                </div>
+                <div class="policy-section">
+                    <h4><i class="fa-solid fa-copyright"></i> মেধাস্বত্ব (Intellectual Property)</h4>
+                    <p>কোর্সের সমস্ত ভিডিও, কোড, নোট এবং অন্যান্য উপকরণ Cyber Evolution-এর সম্পত্তি। এগুলো কপি, বিতরণ বা পুনরায় প্রকাশ করা কঠোরভাবে নিষিদ্ধ।</p>
+                </div>
+                <div class="policy-section">
+                    <h4><i class="fa-solid fa-user-shield"></i> একাউন্ট শেয়ারিং নিষিদ্ধ</h4>
+                    <p>প্রতিটি TOKEN শুধুমাত্র একজন ব্যক্তির জন্য প্রযোজ্য। অন্যের সাথে TOKEN শেয়ার করা নিষিদ্ধ। একাউন্ট শেয়ারিং সনাক্ত হলে কোনো রিফান্ড ছাড়াই একাউন্ট বন্ধ করা হবে।</p>
+                </div>
+                <div class="policy-section">
+                    <h4><i class="fa-solid fa-scale-balanced"></i> আইনগত ব্যবহার</h4>
+                    <p>কোর্সে শেখানো সকল সাইবার সিকিউরিটি বিষয়াবলী কেবলমাত্র শিক্ষামূলক এবং আইনসম্মত উদ্দেশ্যে ব্যবহার করতে হবে। অবৈধ উদ্দেশ্যে ব্যবহারের জন্য আমরা দায়ী থাকব না।</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-bg-anim">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-shield-halved"></i> Cybersecurity & Programming
+                    </div>
+                    <h1 class="hero-title">
+                        টেকনোলজি ও সাইবার নিরাপত্তায়<br>
+                        <span class="text-gradient">দক্ষতা অর্জন করুন</span>
+                    </h1>
+                    <p class="hero-sub">আমাদের "Cyber Evolution" কোর্সের মাধ্যমে জিরো থেকে অ্যাডভান্স লেভেলের প্রোগ্রামিং এবং সাইবার সিকিউরিটি আয়ত্ত করুন।</p>
+                    <div class="hero-cta">
+                        <button id="heroEnrollBtn" class="btn-primary btn-glow">
+                            <i class="fa-solid fa-rocket"></i> কোর্সে এনরোল করুন
+                        </button>
+                        <a href="#course" class="btn-outline">
+                            <i class="fa-solid fa-book-open"></i> কোর্স দেখুন
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat"><strong>৪০+</strong><span>মডিউল</span></div>
+                        <div class="stat-divider"></div>
+                        <div class="stat"><strong>১০/৪</strong><span>শুরুর তারিখ</span></div>
+                        <div class="stat-divider"></div>
+                        <div class="stat"><strong>সিমিত</strong><span>সিট বাকি</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSE SECTION -->
+        <section class="course-section" id="course">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">📚 কোর্স কারিকুলাম</span>
+                    <h2>যা যা শিখতে পারবেন</h2>
+                    <p>আমাদের কোর্সটি এমনভাবে ডিজাইন করা হয়েছে, যাতে আপনার টেকনোলজি ও সাইবার জ্ঞানকে আরও উন্নত করা যায়।</p>
+                </div>
+
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <div class="module-icon-wrap"><i class="fa-brands fa-java"></i></div>
+                        <div class="module-num-badge">০১</div>
+                        <h3>এডভান্স জাভা প্রোগ্রামিং</h3>
+                        <p>এই অংশে অংশগ্রহণের জন্য বেসিক জাভা জানা আবশ্যক।</p>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon-wrap"><i class="fa-solid fa-diagram-project"></i></div>
+                        <div class="module-num-badge">০২</div>
+                        <h3>ডাটা স্ট্রাকচার ও DSA</h3>
+                        <ul>
+                            <li>প্রোগ্রামিং লজিক শক্তিশালী করা</li>
+                            <li>সমস্যা সমাধানের দক্ষতা বৃদ্ধি</li>
+                        </ul>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div class="module-num-badge">০৩</div>
+                        <h3>প্রফেশনাল জাভা প্রজেক্ট</h3>
+                        <p>বাস্তব জীবনের প্রজেক্ট তৈরি শেখানো হবে।</p>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon-wrap"><i class="fa-solid fa-bug"></i></div>
+                        <div class="module-num-badge">০৪</div>
+                        <h3>ম্যালওয়্যার টেস্টিং</h3>
+                        <p>বিভিন্ন ধরনের ম্যালওয়্যার বিশ্লেষণ ও পরীক্ষা।</p>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon-wrap"><i class="fa-solid fa-microscope"></i></div>
+                        <div class="module-num-badge">০৫</div>
+                        <h3>ম্যালওয়্যার রিভার্স ইঞ্জিনিয়ারিং</h3>
+                        <p>ম্যালওয়্যার কীভাবে কাজ করে তা গভীরভাবে বোঝা।</p>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
+                        <div class="module-num-badge">০৬</div>
+                        <h3>বেসিক নেটওয়ার্কিং</h3>
+                        <p>নেটওয়ার্কের মৌলিক ধারণা ও ব্যবহার।</p>
+                    </div>
+                    <div class="module-card module-card-wide">
+                        <div class="module-icon-wrap"><i class="fa-solid fa-terminal"></i></div>
+                        <div class="module-num-badge">০৭</div>
+                        <h3>জাভা ও নেটওয়ার্কিং দিয়ে সফটওয়্যার তৈরি</h3>
+                        <ul>
+                            <li>নিজেই বিভিন্ন সফটওয়্যার ডেভেলপমেন্ট</li>
+                            <li>RAT (Remote Access Tool) তৈরি করা ও কাজের প্রক্রিয়া</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PRICING CARD -->
+                <div class="pricing-card" id="pricing">
+                    <div class="pricing-left">
+                        <div class="pricing-badge"><i class="fa-solid fa-fire"></i> লিমিটেড টাইম অফার</div>
+                        <div class="pricing-title">সম্পূর্ণ কোর্স প্যাকেজ</div>
+                        <div class="pricing-amount">
+                            <span class="original">৳ ৩৫০০</span>
+                            <span class="discounted">৳ ৩০০০</span>
+                        </div>
+                        <div class="pricing-save">আপনি বাঁচাচ্ছেন ৳ ৫০০</div>
+                    </div>
+                    <div class="pricing-right">
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-check"></i> ৭টি সম্পূর্ণ মডিউল</li>
+                            <li><i class="fa-solid fa-check"></i> লাইফটাইম অ্যাক্সেস</li>
+                            <li><i class="fa-solid fa-check"></i> প্র্যাক্টিক্যাল প্রজেক্ট</li>
+                            <li><i class="fa-solid fa-check"></i> ডেডিকেটেড সাপোর্ট</li>
+                        </ul>
+                        <button id="enrollBtn" class="btn-primary btn-glow btn-big">
+                            <i class="fa-solid fa-rocket"></i> এখনই এনরোল করুন
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW TO BUY SECTION -->
+        <section class="how-to-section" id="how-to-buy">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">🛒 কেনার গাইড</span>
+                    <h2>কোর্স কেনা ও লগইন করার পদ্ধতি</h2>
+                </div>
+                <div class="steps-row">
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fa-solid fa-wallet"></i></div>
+                        <div class="step-no">ধাপ ১</div>
+                        <h4>বিকাশে পেমেন্ট করুন</h4>
+                        <p><strong>01829534989</strong> নাম্বারে Send Money করুন। পরিমাণ ৳৩০০০।</p>
+                    </div>
+                    <div class="step-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fa-solid fa-file-pen"></i></div>
+                        <div class="step-no">ধাপ ২</div>
+                        <h4>ফর্ম পূরণ করুন</h4>
+                        <p>এনরোল বাটনে ক্লিক করে বিকাশ নাম্বার, TrxID ও যোগাযোগ নাম্বার দিন।</p>
+                    </div>
+                    <div class="step-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fa-solid fa-key"></i></div>
+                        <div class="step-no">ধাপ ৩</div>
+                        <h4>TOKEN পান</h4>
+                        <p>৫-১০ মিনিটের মধ্যে আপনার নাম্বারে TOKEN ও পাসওয়ার্ড পাঠানো হবে।</p>
+                    </div>
+                    <div class="step-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fa-solid fa-right-to-bracket"></i></div>
+                        <div class="step-no">ধাপ ৪</div>
+                        <h4>লগইন করুন</h4>
+                        <p>উপরে "লগইন" বাটনে TOKEN ও পাসওয়ার্ড দিয়ে ড্যাশবোর্ডে প্রবেশ করুন।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <!-- Brand -->
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Cyber Evolution</span>
+                    </div>
+                    <p>সাইবার সিকিউরিটি ও প্রোগ্রামিং শেখার সেরা বাংলা প্ল্যাটফর্ম। আমাদের সাথে থাকুন এবং আপনার ক্যারিয়ারকে নতুন উচ্চতায় নিয়ে যান।</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/01829534989" target="_blank" class="social-pill whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="https://t.me/Cyber_Evolution_CEO" target="_blank" class="social-pill telegram">
+                            <i class="fa-brands fa-telegram"></i> Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">দ্রুত লিংক</h4>
+                    <ul class="footer-links">
+                        <li><a href="#course"><i class="fa-solid fa-chevron-right"></i> কোর্স কারিকুলাম</a></li>
+                        <li><a href="#pricing"><i class="fa-solid fa-chevron-right"></i> মূল্য তালিকা</a></li>
+                        <li><a href="#" id="openHowToBuy"><i class="fa-solid fa-chevron-right"></i> কেনার পদ্ধতি</a></li>
+                    </ul>
+                </div>
+
+                <!-- Policy -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">নীতিমালা</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" id="openPrivacy"><i class="fa-solid fa-chevron-right"></i> প্রাইভেসি পলিসি</a></li>
+                        <li><a href="#" id="openTerms"><i class="fa-solid fa-chevron-right"></i> শর্তাবলী</a></li>
+                        <li><a href="#" id="openHowToBuy2"><i class="fa-solid fa-chevron-right"></i> কেনা ও লগইন গাইড</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">যোগাযোগ করুন</h4>
+                    <div class="contact-items">
+                        <a href="https://wa.me/01829534989" target="_blank" class="contact-item">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <span>WhatsApp</span>
+                                <strong>01829534989</strong>
+                            </div>
+                        </a>
+                        <a href="https://t.me/Cyber_Evolution_CEO" target="_blank" class="contact-item">
+                            <i class="fa-brands fa-telegram"></i>
+                            <div>
+                                <span>Telegram</span>
+                                <strong>@Cyber_Evolution_CEO</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; 2026 Cyber Evolution. All Rights Reserved.</p>
+                <p>Made with <i class="fa-solid fa-heart" style="color:#f43f5e;"></i> @Cyber_Evolution_CEO</p>
+            </div>
+        </div>
+    </footer>
+
+    </div><!-- end siteWrapper -->
+
+    <script src="script.js"></script>
 </body>
 </html>

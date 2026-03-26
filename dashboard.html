@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Evolution - Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <h1><i class="fa-solid fa-shield-halved"></i> Cyber Evolution</h1>
+            </div>
+            <div class="nav-actions">
+                <button id="logoutBtn" class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> লগআউট</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <div class="welcome-banner glass-panel">
+                <h2><i class="fa-brands fa-space-awesome"></i> ড্যাশবোর্ডে স্বাগতম!</h2>
+                <p>নিচে আপনার এনরোল করা কোর্সের মডিউলগুলো দেওয়া হলো। আপনার ভিডিও ক্লাসগুলো শিডিউল অনুযায়ী আনলক হবে।</p>
+            </div>
+
+            <!-- Course Modules Grid -->
+            <div class="course-grid" id="courseGrid">
+                <!-- JavaScript will populate the courses here securely -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Locked Notice Modal -->
+    <div id="noticeModal" class="modal">
+        <div class="modal-content glass-panel text-center">
+            <span class="close-btn">&times;</span>
+            <div class="notice-icon">
+                <i class="fa-solid fa-lock" style="color: #f59e0b; font-size: 60px; margin-bottom: 15px;"></i>
+            </div>
+            <h2 style="color: #f59e0b; font-size: 1.6rem; margin-bottom: 15px;">ভিডিও লকড!</h2>
+            <div class="notice-text">
+                <p>প্রিয় গ্রাহক,</p>
+                <p>আমাদের কোর্স ভিডিওগুলো আগামী <strong>১০/৪/২০২৬</strong> তারিখ থেকে চালু হবে। অনুগ্রহ পূর্বক অপেক্ষা করুন।</p>
+                <p>এই বিষয়ে কোন মন্তব্য থাকলে আমাদের এডমিনের সাথে যোগাযোগ করুন। ধন্যবাদ।</p>
+            </div>
+            <button type="button" class="btn-okay"><i class="fa-solid fa-check"></i> ঠিক আছে</button>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
